@@ -1,6 +1,7 @@
-local pl,wk,theagui,mainframe,menus,listingredients,tw,exp1,exploitsframe,listsframe,topframe,exploitslist,mainframecorner,exploitsframecorner,listsframecorner,topframecorner,listsframelist,toptext1,toptext1stroke,exploitslistgrid,listsframelistgrid,switchexample,switchexamplecorner,switchbutton,switchexampletext,db,cg,switchexampletextstroke,switchbuttoncorner,listexample,listexamplecorner,listexampletext,listexampletextstroke = game:GetService("Players"),game:GetService("Workspace"),Instance.new("ScreenGui"),Instance.new("Frame"),Instance.new("Frame"),Instance.new("Frame"),game:GetService("TweenService"),TweenInfo.new(0.8,Enum.EasingStyle.Exponential),Instance.new("Frame"),Instance.new("Frame"),Instance.new("Frame"),Instance.new("ScrollingFrame"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("ScrollingFrame"),Instance.new("TextLabel"),Instance.new("UIStroke"),Instance.new("UIGridLayout"),Instance.new("UIGridLayout"),Instance.new("Frame"),Instance.new("UICorner"),Instance.new("TextButton"),Instance.new("TextLabel"),game:GetService("Debris"),game:GetService("CoreGui"),Instance.new("UIStroke"),Instance.new("UICorner"),Instance.new("TextButton"),Instance.new("UICorner"),Instance.new("TextLabel"),Instance.new("UIStroke")
+local pl,wk,theagui,mainframe,menus,listingredients,tw,exp1,exploitsframe,listsframe,topframe,exploitslist,mainframecorner,exploitsframecorner,listsframecorner,topframecorner,listsframelist,toptext1,toptext1stroke,exploitslistgrid,listsframelistgrid,switchexample,switchexamplecorner,switchbutton,switchexampletext,db,cg,switchexampletextstroke,switchbuttoncorner,listexample,listexamplecorner,listexampletext,listexampletextstroke,exp2 = game:GetService("Players"),game:GetService("Workspace"),Instance.new("ScreenGui"),Instance.new("Frame"),Instance.new("Frame"),Instance.new("Frame"),game:GetService("TweenService"),TweenInfo.new(1,Enum.EasingStyle.Exponential),Instance.new("Frame"),Instance.new("Frame"),Instance.new("Frame"),Instance.new("ScrollingFrame"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("UICorner"),Instance.new("ScrollingFrame"),Instance.new("TextLabel"),Instance.new("UIStroke"),Instance.new("UIGridLayout"),Instance.new("UIGridLayout"),Instance.new("Frame"),Instance.new("UICorner"),Instance.new("TextButton"),Instance.new("TextLabel"),game:GetService("Debris"),game:GetService("CoreGui"),Instance.new("UIStroke"),Instance.new("UICorner"),Instance.new("TextButton"),Instance.new("UICorner"),Instance.new("TextLabel"),Instance.new("UIStroke"),TweenInfo.new(0.5,Enum.EasingStyle.Exponential)
 local p = pl.LocalPlayer
 local pgui = p:WaitForChild("PlayerGui")
+local currentlist
 script.Name,theagui.Parent,theagui.IgnoreGuiInset,theagui.Name,mainframe.Name,mainframe.Parent,mainframe.BackgroundColor3,mainframe.BackgroundTransparency,mainframe.Position,mainframe.Size,menus.Name,menus.Parent,menus.BackgroundTransparency,menus.Size,menus.Visible,listingredients.Name,listingredients.Parent,listingredients.BackgroundTransparency,listingredients.Size,listingredients.Visible,exploitsframe.Name,exploitsframe.Parent,exploitsframe.BackgroundColor3,exploitsframe.BackgroundTransparency,exploitsframe.Position,exploitsframe.Size,listsframe.Name,listsframe.Parent,listsframe.BackgroundColor3,listsframe.BackgroundTransparency,listsframe.Position,listsframe.Size,listsframe.ClipsDescendants,topframe.Name,topframe.Parent,topframe.BackgroundColor3,topframe.BackgroundTransparency,topframe.Position,topframe.Size,exploitslist.Name,exploitslist.Parent,exploitslist.BackgroundTransparency,exploitslist.Position,exploitslist.Size,exploitslist.CanvasSize,exploitslist.ScrollBarThickness,mainframecorner.Parent,mainframecorner.CornerRadius,exploitsframecorner.Parent,exploitsframecorner.CornerRadius,listsframecorner.Parent,listsframecorner.CornerRadius,topframecorner.Parent,topframecorner.CornerRadius,listsframelist.Name,listsframelist.Parent,listsframelist.BackgroundTransparency,listsframelist.Position,listsframelist.Size,listsframelist.CanvasSize,listsframelist.ScrollBarThickness,toptext1.Name,toptext1.Parent,toptext1.BackgroundTransparency,toptext1.Position,toptext1.Size,toptext1.Font,toptext1.Text,toptext1.TextColor3,toptext1.TextScaled,toptext1.TextXAlignment,toptext1stroke.Parent,toptext1stroke.Thickness,exploitslistgrid.CellSize,exploitslistgrid.Parent,listsframelistgrid.Parent,listsframelistgrid.CellSize,switchexample.Parent,switchexample.Name,switchexample.BackgroundColor3,switchexample.BackgroundTransparency,switchexamplecorner.Parent,switchexamplecorner.CornerRadius,switchbutton.Parent,switchbutton.Name,switchbutton.BackgroundColor3,switchbutton.Position,switchbutton.Size,switchbutton.Text,switchexampletext.Name,switchexampletext.Parent,switchexampletext.BackgroundTransparency,switchexampletext.Position,switchexampletext.Size,switchexampletext.Font,switchexampletext.Text,switchexampletext.TextScaled,switchexampletext.TextXAlignment,switchexampletextstroke.Parent,switchexampletextstroke.Thickness,switchbuttoncorner.Parent,switchbuttoncorner.CornerRadius,listexample.Name,listexample.Parent,listexample.BackgroundColor3,listexample.BackgroundTransparency,listexample.Text,listexamplecorner.Parent,listexamplecorner.CornerRadius,listexampletext.Name,listexampletext.Parent,listexampletext.BackgroundTransparency,listexampletext.Size,listexampletext.Font,listexampletext.Text,listexampletext.TextColor3,listexampletext.TextScaled,listexampletextstroke.Parent,listexampletextstroke.Thickness = ">:3",pgui,true,"thea#7796","MainFrame",theagui,Color3.fromRGB(49,49,49),0.3,UDim2.new(0.375293195,0,0.359377831,0),UDim2.new(0.248327211,0,0.280341357,0),"Menus",theagui,1,UDim2.new(1,0,1,0),false,"ListIngredients",theagui,1,UDim2.new(1,0,1,0),false,"ExploitsFrame",mainframe,Color3.fromRGB(49,49,49),0.3,UDim2.new(0.177102178,0,0.150691807,0),UDim2.new(0.791443169,0,0.811071277,0),"ListsFrame",mainframe,Color3.fromRGB(49,49,49),0.3,UDim2.new(0.0196765568,0,0.150691807,0),UDim2.new(0.138419762,0,0.811071277,0),true,"TopFrame",mainframe,Color3.fromRGB(49,49,49),0.3,UDim2.new(0.022824971,0,0.0303399637,0),UDim2.new(0.94886899,0,0.0856718868,0),"ExploitsList",exploitsframe,1,UDim2.new(0.0322917067,0,0.0410629697,0),UDim2.new(0.96770829,0,0.912834525,0),UDim2.new(0,0,1,0),0,mainframe,UDim.new(0.05,0),exploitsframe,UDim.new(0.05,0),listsframe,UDim.new(0.2,0),topframe,UDim.new(0.5,0),"ListsList",listsframe,1,UDim2.new(0.156153187,0,0.0545223989,0),UDim2.new(0.670513272,0,0.905483246,0),UDim2.new(0,0,1,0),0,"TopText1",topframe,1,UDim2.new(0.0309999995,0,0.100000001,0),UDim2.new(0.94511044,0,0.81060946,0),Enum.Font.SourceSansBold,"thea#7796",Color3.fromRGB(255,255,255),true,Enum.TextXAlignment.Left,toptext1,1,UDim2.new(0.970000029,0,0.189999998,0),exploitslist,listsframelist,UDim2.new(1,0,0.189999998,0),menus,"SwitchExample",Color3.fromRGB(40,40,40),0.1,switchexample,UDim.new(0.2,0),switchexample,"SwitchButton",Color3.fromRGB(255,255,255),UDim2.new(0.899999976,0,0.141000003,0),UDim2.new(0.0839999989,0,0.699999988,0),"","ExploitText",switchexample,1,UDim2.new(0.0310000163,0,0.100000016,0),UDim2.new(0.829058647,0,0.81060946,0),Enum.Font.SourceSansBold,"Auto Dice",true,Enum.TextXAlignment.Left,switchexampletext,1,switchbutton,UDim.new(0.4,0),"ListExample",menus,Color3.fromRGB(35,35,35),0.1,"",listexample,UDim.new(0.3,0),"ListText",listexample,1,UDim2.new(1,0,1,0),Enum.Font.SourceSansBold,"Autofarm",Color3.fromRGB(255,255,255),true,listexampletext,1
 function fadeself(v1,mode,twinfo)
 	local cmp1,cmp2,cmp3 = v1:IsA("TextButton"),v1:IsA("TextLabel"),v1:IsA("UIStroke")
@@ -16,11 +17,17 @@ function fadeself(v1,mode,twinfo)
 		newtv1:Play()
 	end
 end
-function fadedescwithself(v1,mode,twinfo)
-	local v1dc = v1:GetDescendants()
+function fadedescwithself(v1,mode,twinfo,waitforit1)
+	local v1dc,twinfotm = v1:GetDescendants(),twinfo.Time
 	fadeself(v1,mode,twinfo)
 	for i2,v2 in pairs(v1dc) do
 		fadeself(v2,mode,twinfo)
+	end
+	if waitforit1 then
+		task.wait(twinfotm)
+		return
+	else
+		return
 	end
 end
 function createswitch(switchname,inlist)
@@ -28,11 +35,37 @@ function createswitch(switchname,inlist)
 end
 function createlist(listname)
 	local newlist,newingredients = listexample:Clone(),Instance.new("Frame")
-	local newlisttext1 = newlist:WaitForChild("ListText")
-	newlist.Parent,newlist.Name,newlisttext1.Text,newingredients.Parent,newingredients.Name,newlist.BackgroundTransparency,newlisttext1.TextTransparency = listsframelist,listname,listname,listingredients,listname,1,1
-	fadedescwithself(newlist,0.1,exp1)
+	local newlisttext1,newlistbackgroundcolor1 = newlist:WaitForChild("ListText"),Color3.fromRGB(35,35,35)
+	newlist.Parent,newlist.Name,newlisttext1.Text,newingredients.Parent,newingredients.Name,newlist.BackgroundTransparency,newlisttext1.TextTransparency,newlist.AutoButtonColor = listsframelist,listname,listname,listingredients,listname,1,1,false
+	fadedescwithself(newlist,0.1,exp1)newlist:SetAttribute("newlistcolor1",newlistbackgroundcolor1)
+	newlist.MouseEnter:Connect(function()
+		local newlistcolor1val1 = newlist:GetAttribute("newlistcolor1")
+		local newlistcolor1val1r,newlistcolor1val1g,newlistcolor1val1b = newlistcolor1val1.R,newlistcolor1val1.G,newlistcolor1val1.B
+		local r1,g1,b1 = newlistcolor1val1r - 0.1,newlistcolor1val1g - 0.1,newlistcolor1val1b - 0.1
+		local newtv1 = tw:Create(newlist,exp2,{BackgroundColor3 = Color3.new(r1,g1,b1)})
+		newtv1:Play()
+	end)
+	newlist.MouseLeave:Connect(function()
+		local newlistcolor1val1 = newlist:GetAttribute("newlistcolor1")
+		local newtv1 = tw:Create(newlist,exp2,{BackgroundColor3 = newlistcolor1val1})
+		newtv1:Play()
+	end)
+	newlist.MouseButton1Up:Connect(function()
+		local newtv1 = tw:Create(newlist,exp2,{BackgroundColor3 = Color3.fromRGB(170,85,255)})
+		newtv1:Play()newlist:SetAttribute("newlistcolor1",Color3.fromRGB(170,85,255))
+	end)
+	return newlist
+end
+function createmultiplelists(listnametable)
+	local createdlists = {}
+	for i1,v1 in pairs(listnametable) do
+		local v1list = createlist(v1)
+		table.insert(createdlists,v1list)
+		task.wait(0.4)
+	end
+	return createdlists
 end
 task.wait(5)
-createlist("Wassup")
+print(createmultiplelists({"Hello","There","My","Sugar",":)"}))
 task.wait(20)
 theagui:Destroy()
