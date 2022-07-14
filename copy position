@@ -1,1 +1,1 @@
-
+local _=game:GetService("\x50\x6C\x61\x79\x65\x72\x73") local _=_.LocalPlayer local _=_.Character or _.CharacterAdded:Wait() local _=_:WaitForChild("\x48\x75\x6D\x61\x6E\x6F\x69\x64\x52\x6F\x6F\x74\x50\x61\x72\x74") local _=_.Position local _=tostring(_) setclipboard(_)
